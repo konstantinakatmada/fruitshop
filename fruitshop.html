@@ -1,0 +1,572 @@
+<!-- <code to be commented out<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    </head>
+    <style>
+        
+        body {background-color: rgb(203, 206, 178);}
+        
+h2 {
+  color: rgb(102, 4, 69);
+}
+     h2 
+        
+h3 {
+  color: rgb(128, 0, 124);
+}
+     h3
+            
+h4 {
+  color: rgb(189, 9, 21);
+}
+    h4
+   
+.navbar{background-color:#2f3e46;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;}
+    
+.cart { background-color:aliceblue;color:black; padding:5px}
+.cartObjects {background-color:aquamarine;color:#2f3e46;font-size: 20px; padding: 5px; border: radius 4px;}
+.cartObjects {font-size: 15px;background-color: rgb(226, 43, 211);color:white;position:relative; top=-15; right=-10;border-radius: 3px;}
+  
+
+    .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.shop {display:grid;
+    grid-template-columns:repeat(5, 220px);
+    gap:30px;}
+.item { border 2px solid black
+     ;
+    border-radius: 4px;justify-content:center;}
+
+.details { display:flex; flex-direction:column; padding:10px;gap:10px;}
+
+.price-amount { display:flex; flex-direction:row;justify-content:space-between;align-items:center; }
+
+.buttons {display:flex; flex-direction: row;
+gap: 8px;
+font-size: 15px;}
+
+@media (max-width:1000px){.shop{ grid-template-columns:repeat(2, 220px);}}
+
+
+</style>
+        <body>
+           
+            <div class = navbar ></div><h1>Hackney Fruit Collective</h1>
+
+                <div class="cart"></div>
+                <i class="bi bi-bag-heart"></i>
+                <div id="cartAmount" class="cartobjects">0</div>
+            </div
+
+
+            <p id="demo"></p>
+            <h2>Welcome to Hackney's collectively-run Fruitshop</h2>
+            <h3>Where our community and fair-trade fruit importers come together</h3>
+            <h4>Make your choice from our variety of fresh seasonal fruit</h4>
+            <img src="gijscoolen.avif" alt="Unsplash art photo of Shoreditch graffiti of a watermelon by Gijs Coolen" border: 1px solid black;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            margin-right: 150px;
+            margin-left: 80px; > 
+
+            <div class="shop" id="shop"></div>
+                <div class="item">
+                    <img width="220" src="bananaspic.webp" alt="picture of product- Bananas"<div class="details">
+                        <h3>Bananas</h3>
+                        <p> aprox.5-6 medium ripe bananas </p>
+                        <div class: "price-amount">
+                    <h3>£1.80</h3>
+<div class="buttons">
+    <i class="bi bi-dash-lg"></i>
+    <div class="quantity">0</div>
+    <i class="bi bi-plus-lg"></i>
+</div>
+                    </div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+
+            
+
+<div class="card">
+  <img src="bananaspic.webp" alt="picture of product-Bananas" style="width:20%">
+  <h1>Bananas</h1>
+  <p class="price">£1.80</p>
+  <p>aprox.5-6 medium ripe bananas</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+
+<div class="card">
+  <img src="melonpic.webp" alt="picture of product-Melon" style="width:20%">
+  <h1>Melon</h1>
+  <p class="price">£2.20</p>
+  <p>one melon</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+<div class="card">
+  <img src="watermelonpic.webp" alt="picture of product-Watermelon" style="width:20%">
+  <h1>Watermelon</h1>
+  <p class="price">£3.20</p>
+  <p>one watermelon</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+<div class="card">
+  <img src="strawberriespic.avif" alt="picture of product-Strawberries" style="width:20%">
+  <h1>Strawberries</h1>
+  <p class="price">£3</p>
+  <p>200gr cardboard box</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+<div class="card">
+  <img src="apricots.avif" alt="picture of product-Apricots" style="width:20%">
+  <h1>Apricots</h1>
+  <p class="price">£2</p>
+  <p>aprox. 200gr cardboard box</p>
+  <p><button>Add to Cart</button></p>
+</div>
+
+
+<script>
+
+    
+              const  products = [
+  { Name: "Bananas", Price: 1.80, addedToCart: false },
+  { Name: "Melon", Price: 2.20, addedToCart: false },
+  { Name: "Watermelon", Price: 3.20, addedToCart: false },
+  { Name: "Strawberries", Price: 3, addedToCart: false },
+  { Name: "Apricots", Price: 2, addedToCart: false },
+                ]; 
+                document.getElementById("demo").innerHTML = products[0];
+
+
+                const Names = products.map(product => product.Name)
+
+console.log(Names)
+
+// [ Bananas, Melon, Watermelon, Strawberries, Apricots]
+
+
+function cart(product) {
+  if (
+    product.Name == "Bananas" ||
+    product.Name == "Melon" ||
+    product.Name == "Watermelon"||
+    product.Name == "Strawberries"||
+    product.Name == "Apricots"
+  ) {
+    product.addedToCart = true
+  }
+}
+
+products.forEach(cart)
+
+console.log(products)
+
+/* [
+  { Name: "Bananas", Price: 1.80, addedToCart: true },
+  { Name: "Melon", Price: 2.20, addedToCart: false },
+  { Name: "Watermelon", Price: 3.20, addedToCart: true },
+  { Name: "Strawberries", Price: 3, addedToCart: false },
+  { Name: "Apricots", Price: 2, addedToCart: true },
+] */
+const cartItems = products.filter(product => product.addedToCart == true)
+const prices = cartItems.map(cartItem => cartItem.Price)
+
+console.log(prices)
+const total = prices.reduce((m, n) => m + n)
+
+console.log(total)
+
+let shopItemsData= [...];
+
+let basket= [ { id="nfodn", item=1}]
+
+
+
+let shop=getDocumentbyId("shop")
+console.log(shop);
+let ShopItemsData= [ {id="first", name="Bananas", price= £1.80, desc="aprox.5-6 medium ripe bananas",img:"bananaspic.webp" },
+{id="second", name="Melon", price= £2.20, desc="one melon",img:"melonpic.webp"},
+{id="third", name="Watermelon", price= £3.20, desc="one watermelon",img:"watermelon.webp" £3.20},
+{id="fourth", name="Strawberries", price= £3, desc="200gr cardboard box",img:"strawberriespic.avif" },
+{id="fifth", name="Apricots", price= £2, desc="aprox. 200gr cardboard box",img:"apricots.avif" }]
+
+    let generateShop=()=>return shop.innerHTM=ShopItemsData.map ((x)=>{let id.name.price.desc.img})=x.join(""))`return'<div class="shop" id="shop"</div>
+                <div id=product-id-$ {id} class="item">
+                    <img width="220" src="bananaspic.webp" alt="picture of product- Bananas"<div class="details">
+                        <h3>${name}</h3>
+                        <p> ${desc} </p>
+                        <div class: "price-amount">
+                    <h3>£ ${price}</h3>
+<div class="buttons">
+    <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+    <div id=$id {id} class="quantity">0</div>
+    <i onclick="increment(${id})"class="bi bi-plus-lg"></i>
+</div>
+                    </div>
+                </div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div> ;
+
+generateShop( )
+
+
+let increment = (id)=>{};
+let selectedItem= id;
+console.log(basket);
+update (selectedItem.id);
+let.search= basket.find ((x)=>x.id===selectedItem.id);
+if(search===undefined){
+basket.push({id:selectedItem.id, item:1,});
+});
+}else {search.item += 1;
+}
+let decrement = (id)=>{
+    let selectedItem=id;
+    let search= basket.find((x)=> x.id === selectedItem.id);
+
+};
+
+if(search.item===0){
+    basket.push{id:selectedItem.id,
+        item=1,
+
+};
+
+}else {search.item -=1;
+}
+console.log(basket);
+update (selectedItem.id);
+;
+
+let update = ()=>{let search= basket.find((x)=> x.id === selectedItem.id);
+
+    //console.log (search.item);
+    document.getElementById(id).innerHTML= search.item;
+    calculation
+};
+
+let calculation =( )=>{ }
+let cartIcon= document.getElementById("cartAmount");
+cartIcon.innerHTML= basket.map((x)=>x.item).reduce((x,y)=>x+y,0)
+;
+
+</script>
+
+        </body>
+    
+</html>
+#time{ margin-top: 100px;
+            margin-left: 80px;
+        
+        
+
+        }
+        body {background-color:#d8e9e2;}
+        p {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+img {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 150px;
+  margin-left: 80px;
+}
+h1{ padding-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  
+
+border: 6px double #95a19c;
+}
+    >  -->
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<style>
+  body {
+    background-color: rgb(203, 206, 178);
+  }
+
+  h2 {
+    color: rgb(102, 4, 69);
+  }
+
+  h3 {
+    color: rgb(128, 0, 124);
+  }
+
+  h4 {
+    color: rgb(189, 9, 21);
+  }
+
+  h4 .navbar {
+    background-color: #2f3e46;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cart {
+    background-color: aliceblue;
+    color: black;
+    padding: 5px
+  }
+
+  .cartObjects {
+    background-color: aquamarine;
+    color: #2f3e46;
+    font-size: 20px;
+    padding: 5px;
+    border: radius 4px;
+  }
+
+  .cartObjects {
+    font-size: 15px;
+    background-color: rgb(226, 43, 211);
+    color: white;
+    position: relative;
+    top: -15px;
+    right: -10px;
+    border-radius: 3px;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  .shop {
+    display: grid;
+    grid-template-columns: repeat(5, 220px);
+    gap: 30px;
+  }
+
+  .item {
+    border: 2px solid black;
+    border-radius: 4px;
+    justify-content: center;
+    width: 250px;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .price-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  @media (max-width:1000px) {
+    .shop {
+      grid-template-columns: repeat(2, 220px);
+    }
+  }
+</style>
+
+<body>
+  <div class=navbar <h1>Declaring an Array Using const</h1>
+    <div class="cart"></div>
+    <i class="bi bi-bag-heart"></i>
+    <div id="cartAmount" class="cartobjects">0</div>
+  </div>
+  <p id="demo"></p>
+  <h2>Welcome to Hackney's collectively-run Fruitshop</h2>
+  <h3>Where our community and fair-trade fruit importers come together</h3>
+  <h4>Make your choice from our variety of fresh seasonal fruit</h4>
+  <img src="gijscoolen.avif" alt="Unsplash art photo of Shoreditch graffiti of a watermelon by Gijs Coolen"
+    style="max-width: 20%; max-height: 50%;">
+
+  <div class="shop" id="shop">
+  </div>
+
+  <script>
+
+    let shop = document.getElementById("shop");
+    let basket = [];
+    let shopItemsData = [
+      { id: "first", name: "Bananas", price: 1.80, desc: "aprox.5-6 medium ripe bananas", img: "bananaspic.webp" },
+      { id: "second", name: "Melon", price: 2.20, desc: "one melon", img: "melonpic.webp" },
+      { id: "third", name: "Watermelon", price: 3.20, desc: "one watermelon", img: "watermelonpic.avif" },
+      { id: "fourth", name: "Strawberries", price: 3, desc: "200gr cardboard box", img: "strawberriespic.avif" },
+      { id: "fifth", name: "Apricots", price: 2, desc: "aprox. 200gr cardboard box", img: "apricots.avif" },
+    ];
+
+    let generateShop = () => {
+      return (shop.innerHTML = shopItemsData
+        .map((x) => {
+          let { id, name, desc, img, price } = x;
+          console.log("x", x);
+          let search = basket.find((y) => y.id === id) || [];
+          return `
+        <div id=product-id-${id} class="item">
+          <img width="220" src=${img} alt="">
+          <div class="details">
+            <h3>${name}</h3>
+            <p>${desc}</p>
+            <div class="price-quantity">
+              <h2>$ ${price} </h2>
+              <div class="buttons">
+                <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                <div id=${id} class="quantity">${search.item === undefined ? 0 : search.item
+            }</div>
+                <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+              </div>
+            </div>
+          </div>
+      </div>
+        `;
+        })
+        .join(""));
+    };
+
+    generateShop();
+
+    let increment = (id) => {
+      let selectedItem = id;
+      let search = basket.find((x) => x.id === selectedItem.id);
+
+      if (search === undefined) {
+        basket.push({
+          id: selectedItem.id,
+          item: 1,
+        });
+      } else {
+        search.item += 1;
+      }
+
+      update(selectedItem.id);
+      localStorage.setItem("data", JSON.stringify(basket));
+    };
+
+    let decrement = (id) => {
+      let selectedItem = id;
+      let search = basket.find((x) => x.id === selectedItem.id);
+
+      if (search === undefined) return;
+      else if (search.item === 0) return;
+      else {
+        search.item -= 1;
+      }
+
+      update(selectedItem.id);
+      basket = basket.filter((x) => x.item !== 0);
+      localStorage.setItem("data", JSON.stringify(basket));
+    };
+
+    let update = (id) => {
+      let search = basket.find((x) => x.id === id);
+      document.getElementById(id).innerHTML = search.item;
+      calculation();
+    };
+
+    let calculation = () => {
+      let cartIcon = document.getElementById("cartAmount");
+      cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+    };
+
+    calculation();
+
+  </script>
+
+</body>
+
+</html>
